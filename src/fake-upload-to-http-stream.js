@@ -17,7 +17,7 @@ class OndeToHundredStream extends Readable {
 
         this.push(buf);
       }
-    }, 1000);
+    }, 1);
   }
 }
 
