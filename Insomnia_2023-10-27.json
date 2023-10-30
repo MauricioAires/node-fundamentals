@@ -1,0 +1,152 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-10-27T14:38:47.976Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_20afe2e342424f7b80c588d8599e79e6",
+      "parentId": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "modified": 1698335470113,
+      "created": 1698334146846,
+      "url": "{{ _.baseURL }}/users/{% response 'body', 'req_9dfa40039e8c441b999c62d58070df7a', 'b64::JC5bMF0uaWQ=::46b', 'never', 60 %}",
+      "name": "Update User",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\" : \"Deise\",\n\t\"email\": \"deise26sil@gmial.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1698334146846,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "parentId": null,
+      "modified": 1697200370979,
+      "created": 1697200370979,
+      "name": "Node Fundamentals",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_c877ac8d2bc74adfb232ec4968dbbd1d",
+      "parentId": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "modified": 1698331845012,
+      "created": 1698256452370,
+      "url": "{{ _.baseURL }}/users/{% response 'body', 'req_9dfa40039e8c441b999c62d58070df7a', 'b64::JC5bMF0uaWQ=::46b', 'never', 60 %}",
+      "name": "Delete User",
+      "description": "",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [{ "name": "User-Agent", "value": "insomnia/2023.5.8" }],
+      "authentication": {},
+      "metaSortKey": -1698256452370,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9dfa40039e8c441b999c62d58070df7a",
+      "parentId": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "modified": 1698415528487,
+      "created": 1697202756667,
+      "url": "{{ _.baseURL }}/users",
+      "name": "List Users",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_7356c31bedf74087b9d890db01a41a6b",
+          "name": "search",
+          "value": "deise",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [{ "name": "User-Agent", "value": "insomnia/2023.5.8" }],
+      "authentication": {},
+      "metaSortKey": -1697202756667,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_56d24e05ab144a18a688bfd264cadb33",
+      "parentId": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "modified": 1698415361242,
+      "created": 1697200373690,
+      "url": "{{ _.baseURL }}/users",
+      "name": "Create User",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\" : \"Deise Aires\",\n\t\"email\": \"mauricio@gmial.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" },
+        { "name": "User-Agent", "value": "insomnia/2023.5.8" }
+      ],
+      "authentication": {},
+      "metaSortKey": -1697200373690,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_996728989ee7c14371005e10ef48808d1ba502ce",
+      "parentId": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "modified": 1698256528051,
+      "created": 1697200370986,
+      "name": "Base Environment",
+      "data": { "baseURL": "http://localhost:3333" },
+      "dataPropertyOrder": { "&": ["baseURL"] },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1697200370986,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_996728989ee7c14371005e10ef48808d1ba502ce",
+      "parentId": "wrk_2d9de9e235d84f8997d666b12325819d",
+      "modified": 1697200370988,
+      "created": 1697200370988,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}
