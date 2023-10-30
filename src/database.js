@@ -29,6 +29,8 @@ export class Database {
   insert(table, data) {
     if (Array.isArray(this.#database[table])) {
       this.#database[table].push(data);
+
+      this.#persist();
       return;
     }
 
@@ -39,13 +41,50 @@ export class Database {
     return data;
   }
 
-  select(table) {
-    const data = this.#database[table];
+  select(table, search) {
+    let data = this.#database[table];
+
+    // let it change
+
+    if (search) {
+      data = data.filter((row) => {
+        return Object.entries(search).some(([key, value]) => {
+          return row[key].toLowerCase().includes(value.toLowerCase());
+        });
+      });
+    }
 
     if (!data) {
       return [];
     }
 
     return data;
+  }
+
+  delete(table, id) {
+    const rowIndex = this.#database[table].findIndex((row) => row.id === id);
+
+    if (rowIndex === -1) {
+      return;
+    }
+
+    this.#database[table].splice(rowIndex, 1);
+
+    this.#persist();
+  }
+
+  update(table, id, data) {
+    const rowIndex = this.#database[table].findIndex((row) => row.id === id);
+
+    if (rowIndex === -1) {
+      return;
+    }
+
+    this.#database[table][rowIndex] = {
+      id,
+      ...data,
+    };
+
+    this.#persist();
   }
 }
